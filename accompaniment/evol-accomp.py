@@ -17,7 +17,7 @@ try:
 
     MATPLOTLIB_OK = True
 except ImportError:
-    warnings.warn("matplotlib is not found. Statistic graphical output of evolution algorithm can not be used")
+    print("Matplotlib is not found. Statistic graphical output of evolution algorithm can not be used.")
     MATPLOTLIB_OK = False
 
 chords_matrix_major = [
@@ -345,6 +345,6 @@ if __name__ == "__main__":
     parser.add_argument('-v', '--version', action='version', version='%(prog)s 0.1')
     args = parser.parse_args()
     if args.save:
-        compose(args.path, output_path=args.save, graph_mode=args.plot)
+        compose(args.path, output_path=args.save, graph_mode=args.plot and MATPLOTLIB_OK)
     else:
-        compose(args.path, graph_mode=args.plot)
+        compose(args.path, graph_mode=args.plot and MATPLOTLIB_OK)

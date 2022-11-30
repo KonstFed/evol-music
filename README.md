@@ -44,12 +44,6 @@ Also we can retrieve scale: notes that we can play in this key.
 
 Key detection is based on `music21` standart key detection algorithm
 
-## Detected keys for inputs
-
-- input1.mid is D minor
-- input2.mid is F major
-- input3.mid is E minor
-
 ## Chord generation
 Chord can be represented as scale step based on key and chord type. We consider following chord types:
 - Major
